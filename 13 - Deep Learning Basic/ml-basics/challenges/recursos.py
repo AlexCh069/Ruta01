@@ -116,6 +116,19 @@ def distribution_Data(label):
     
     '''
 
+    # Get statistics
+    min_val = label.min()
+    max_val = label.max()
+    mean_val = label.mean()
+    med_val = label.median()
+    mod_val = label.mode()[0]
+
+    print(label.name,'\nMinimum:{:.2f}\nMean:{:.2f}\nMedian:{:.2f}\nMode:{:.2f}\nMaximum:{:.2f}\n'.format(min_val,
+                                                                                            mean_val,
+                                                                                            med_val,
+                                                                                            mod_val,
+                                                                                            max_val))
+
     import pandas as pd
     import matplotlib.pyplot as plt
 
@@ -128,7 +141,7 @@ def distribution_Data(label):
 
     
     # creamos la figura 
-    fig, ax = plt.subplots(2, 1, figsize = (9,12))  # Generamos la figura
+    fig, ax = plt.subplots(2, 1, figsize = (10,4))  # Generamos la figura
 
     # SUBPLOT 1: Ploteo de histogramas (distribucion de datos)
     ax[0].hist(label, bins = 100)
